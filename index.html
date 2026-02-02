@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For Amna ❤️</title>
+
+<style>
+body{
+  margin:0;
+  height:100vh;
+  background:linear-gradient(135deg,#ff758c,#ff9aa2,#ffc1cc);
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  font-family:sans-serif;
+  overflow:hidden;
+}
+.container{
+  text-align:center;
+  color:white;
+}
+.hidden{display:none;}
+button{
+  padding:12px 25px;
+  font-size:1.2rem;
+  border:none;
+  border-radius:12px;
+  margin:10px;
+  cursor:pointer;
+}
+#yesBtn,#yesBtn2{background:#ff6b81;color:white;}
+#noBtn,#noBtn2{background:#ff4757;color:white;}
+.heart{
+  position:absolute;
+  animation:float 6s linear infinite;
+}
+@keyframes float{
+  from{transform:translateY(100vh);}
+  to{transform:translateY(-10vh);}
+}
+</style>
+</head>
+
+<body>
+
+<!-- 🎵 MUSIC -->
+<audio id="bgMusic" loop>
+  <source src="song.mp3" type="audio/mpeg">
+</audio>
+
+<!-- PAGE 1 -->
+<div class="container" id="page1">
+  <h1>Amna ❤️</h1>
+  <p>Will you be my Valentine forever? 💖</p>
+  <button id="yesBtn">YES 💕</button>
+  <button id="noBtn">NO 😅</button>
+</div>
+
+<!-- PAGE 2 -->
+<div class="container hidden" id="page2">
+  <h1>I Love You ❤️</h1>
+  <p>14 Feb ko milo gi 💖</p>
+  <button id="yesBtn2">YES 💕</button>
+  <button id="noBtn2">NO 😅</button>
+</div>
+
+<!-- LAST PAGE -->
+<div class="container hidden" id="messagePage">
+  <h1>❤️ My Sweet Heart ❤️</h1>
+  <p>Can’t wait to see you 😘</p>
+</div>
+
+<script>
+const bgMusic = document.getElementById("bgMusic");
+
+const page1 = document.getElementById("page1");
+const page2 = document.getElementById("page2");
+const messagePage = document.getElementById("messagePage");
+
+const yesBtn = document.getElementById("yesBtn");
+const yesBtn2 = document.getElementById("yesBtn2");
+const noBtn2 = document.getElementById("noBtn2");
+
+yesBtn.onclick = () => {
+  bgMusic.play();
+  page1.classList.add("hidden");
+  page2.classList.remove("hidden");
+};
+
+yesBtn2.onclick = () => {
+  bgMusic.play();
+  page2.classList.add("hidden");
+  messagePage.classList.remove("hidden");
+};
+
+noBtn2.onmouseenter = () => {
+  noBtn2.style.position="absolute";
+  noBtn2.style.left=Math.random()*80+"vw";
+  noBtn2.style.top=Math.random()*80+"vh";
+};
+</script>
+
+</body>
+</html>
